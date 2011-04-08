@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+  <h1>Hello World</h1>
+  <h2>Welcome {{username}}</h2>
+  
+    {% for greeting in greetings %}
+    On {{greeting.date.day}}/{{greeting.date.month}}/{{greeting.date.year}},
+      {% if greeting.author %}
+        {{ greeting.author.nickname }} wrote:
+      {% else %}
+       An anonymous person wrote:
+      {% endif %}
+      <blockquote>{{ greeting.content|escape }}
+      </blockquote>
+    {% endfor %}
+
+    <form action="/sign" method="post">
+      <div><textarea name="content" rows="3" cols="60"></textarea></div>
+      <div><input type="submit" value="Sign Guestbook"></div>
+    </form>
+
+    <a href="{{ url }}">{{ url_linktext }}</a>
+
+  </body>
+</html>

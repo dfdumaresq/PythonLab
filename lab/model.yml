@@ -1,0 +1,62 @@
+Person:
+ - login: string
+ - first_name: string
+ - last_name: string
+ - email: string
+ - skill_tags: string
+ - description: text
+ - created_date: date
+ - last_update_date: date
+  
+Role:
+ - title: string
+ - description: text
+ - type: string
+ - skill_tags: string
+ - created_date: date
+ - last_update_date: date
+  
+Project:
+ - title: string
+ - summary: string
+ - description: text
+ - type: string
+ - created_date: date
+ - last_update_date: date
+ - status: string
+ - belongs_to: [Person] 
+  
+ProjectMember:
+ - belongs_to: [Project]
+ - belongs_to: [Person] 
+
+ProjectRole:
+ - belongs_to: [Project, Role, Person]
+  
+Task:
+ - title: string
+ - description: text
+ - start_date: date
+ - due_date: date
+ - status: string
+ - order: integer
+ - type: string
+ - created_date: date
+ - last_update_date: date
+ - belongs_to: [Project] 
+
+PersonTask:
+ - belongs_to: [Person]
+ - has_many: [Tasks]
+  
+Artifact:
+ - title: string
+ - description: text
+ - source_url: string
+ - created_date: date
+ - last_update_date: date
+ - belongs_to: [Person] 
+
+ProjectArtifact:
+ - has_many: [Projects]
+ - belongs_to: [Artifact]
