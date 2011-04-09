@@ -5,6 +5,8 @@
 
 # a local comment
 
+# a remote comment
+
 a = 1
 b = 2
 
