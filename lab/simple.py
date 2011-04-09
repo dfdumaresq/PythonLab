@@ -5,6 +5,8 @@
 
 # a local comment
 
+# another local comment
+
 a = 1
 b = 2
 
