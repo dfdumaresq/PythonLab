@@ -1,7 +1,7 @@
 """A simple script."""
 # adding a comment from local -- must be merged
 
-# a new comment
+# another remote comment
 
 a = 1
 b = 2
